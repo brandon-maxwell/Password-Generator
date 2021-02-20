@@ -7,11 +7,21 @@ var specialCharacters = ["!","#","$","%","&","(",")","*","+",",","-",".","/",":"
 
 // Write password to the #password input
 function writePassword() {
+
+  var userInput = window.prompt ("How many characters would you like your password to contain?");
+  if(userInput < 8 || userInput > 128) {
+    window.alert("Please select a number between 8-128");
+  }
+
+  var special = window.confirm("Include Special Characters?");
+  var number = window.confirm("Include Numberic Values?")
+  var lower = window.confirm("Include Lowercase?")
+  var upper = window.confirm("Include Uppercase?")
+
   var password = generatePassword 
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
