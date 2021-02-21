@@ -3,7 +3,7 @@ This repository includes a password generator that was created using Java Script
 
 ## Preview
 
-**URL** 
+**URL** https://brandon-maxwell.github.io/Password-Generator/
 
 ![preview_gif](Assets/preview.gif)
 
