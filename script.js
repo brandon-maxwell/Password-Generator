@@ -8,11 +8,11 @@ var specialCharacters = ["!","#","$","%","&","(",")","*","+",",","-",".","/",":"
 // Write password to the #password input
 function writePassword() {
 
-  
   var passwordVars = [];
   var userInput = window.prompt ("How many characters would you like your password to contain?");
   if(userInput < 8 || userInput > 128) {
     window.alert("Please select a number between 8-128");
+    return;
   }
 
   var special = window.confirm("Include Special Characters?");
@@ -39,6 +39,5 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
