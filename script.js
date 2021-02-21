@@ -8,6 +8,8 @@ var specialCharacters = ["!","#","$","%","&","(",")","*","+",",","-",".","/",":"
 // Write password to the #password input
 function writePassword() {
 
+  
+  var passwordVars = [];
   var userInput = window.prompt ("How many characters would you like your password to contain?");
   if(userInput < 8 || userInput > 128) {
     window.alert("Please select a number between 8-128");
@@ -17,6 +19,20 @@ function writePassword() {
   var number = window.confirm("Include Numberic Values?")
   var lower = window.confirm("Include Lowercase?")
   var upper = window.confirm("Include Uppercase?")
+
+  if (!special && !number && !lower && !upper) {
+    window.alert("Must select at least one option");
+    return;
+  }
+
+  if (special) passwordVars = passwordVars.concat(specialCharacters)
+  if (number) passwordVars = passwordVars.concat(numbers)
+  if (lower) passwordVars = passwordVars.concat(lowerCase)
+  if (upper) passwordVars = passwordVars.concat(upperCase)
+  var generatePassword = [];
+
+  for (var i=0; i<userInput; i++)
+  generatePassword = generatePassword + passwordVars[Math.floor(Math.random() * passwordVars.length)]
 
   var password = generatePassword 
   var passwordText = document.querySelector("#password");
